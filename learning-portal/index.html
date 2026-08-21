@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learnly — Online Learning Portal</title>
+  <meta name="description" content="A consistent, readable learning interface for courses, lessons, assignments and resources — built with pure CSS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Karla:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="home">
+
+  <!-- ═══════════ NAVBAR ═══════════ -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">&#9654;</span>Learnly</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Courses</a></li>
+        <li><a href="cart.html" class="cart-link">Cart <span class="cart-badge" id="cartCount">0</span></a></li>
+        <li><a href="payment.html">Checkout</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Online Learning Portal</span>
+          <h1>Learning, <span class="mark">without the clutter</span>.</h1>
+          <p class="hero-sub">
+            Learnly presents courses, lessons, assignments and resources through one
+            consistent, readable interface — every screen built from the same components
+            and the same CSS rules.
+          </p>
+          <div class="hero-actions">
+            <a href="products.html" class="btn btn-primary">Browse courses</a>
+            <a href="#reader" class="btn btn-ghost">Try the reader</a>
+          </div>
+          <p class="hero-note"><b>08</b> courses &middot; <b>272</b> lessons &middot; <b>01</b> design system</p>
+        </div>
+
+        <div class="hero-stage" aria-hidden="true">
+          <span class="float-chip progress">progress <b>68%</b></span>
+          <div id="heroCard"></div>
+          <span class="float-chip due"><b>&#9998;</b> Assignment 3 due Friday</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ THE READER (signature section) ═══════════ -->
+    <section class="reader-section section" id="reader">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Readable by design</span>
+          <h2>A lesson you can tune to your eyes.</h2>
+          <p>Every control below changes one CSS custom property on the reader —
+             the ruled lines even re-space themselves to match the line height.</p>
+        </div>
+
+        <div class="reader-layout">
+          <!-- — controls — -->
+          <div class="ctrl-panel" id="readerControls">
+            <h3>Reading preferences</h3>
+            <div class="ctrl-group">
+              <label>Font size</label>
+              <div class="seg">
+                <button data-group="size" data-value="small">A&#8722;</button>
+                <button data-group="size" data-value="medium">A</button>
+                <button data-group="size" data-value="large">A+</button>
+              </div>
+            </div>
+            <div class="ctrl-group">
+              <label>Line height</label>
+              <div class="seg">
+                <button data-group="height" data-value="compact">Compact</button>
+                <button data-group="height" data-value="comfy">Comfy</button>
+                <button data-group="height" data-value="airy">Airy</button>
+              </div>
+            </div>
+            <div class="ctrl-group">
+              <label>Theme</label>
+              <div class="seg">
+                <button data-group="theme" data-value="paper">Paper</button>
+                <button data-group="theme" data-value="sepia">Sepia</button>
+                <button data-group="theme" data-value="night">Night</button>
+              </div>
+            </div>
+            <p class="ctrl-hint">Your choices are saved in
+              <code>localStorage</code> and applied via
+              <code>--r-size</code>, <code>--r-lh</code> and
+              <code>[data-theme]</code>.</p>
+          </div>
+
+          <!-- — the sample lesson — -->
+          <article class="reader" id="readerCard" data-theme="paper">
+            <div class="reader-meta">
+              <span class="crumb">Responsive CSS Mastery &nbsp;/&nbsp; Module 2</span>
+              <span class="pill">&#9654; video &middot; 11:05</span>
+              <span class="pill">&#9636; reading &middot; 8 min</span>
+            </div>
+            <h3 class="lesson-title">Lesson 2.2 — Reading layout like a browser</h3>
+            <div class="prose">
+              <p>Before a browser paints a single pixel, it wraps every element in four
+                 invisible rectangles: the content, its padding, the border around that,
+                 and the margin pushing neighbours away. Layout is nothing more than
+                 the arithmetic of these boxes.</p>
+              <p><span class="mark">If you can predict the size of the box, you can predict
+                 the entire page.</span> That is why this course measures everything —
+                 spacing comes from a scale, not from nudging numbers until it
+                 &ldquo;looks right&rdquo;.</p>
+              <p>Notice this very page: the text you are reading is capped at 65
+                 characters per line, the classic comfortable measure, and each paragraph
+                 sits exactly on the ruled baseline grid behind it.</p>
+            </div>
+            <div class="callout">
+              <b>Assignment 3:</b> rebuild the lesson card above using only content,
+              padding, border and margin — no positioning allowed. Due Friday.
+            </div>
+            <div class="resources">
+              <span class="res-chip">&#9636; slides &middot; box-model.pdf</span>
+              <span class="res-chip">&#9654; recording &middot; 11:05</span>
+              <span class="res-chip">&#10064; starter files &middot; lesson-2-2</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ SYLLABUS + PROGRESS ═══════════ -->
+    <section class="section" id="syllabus">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Inside every course</span>
+          <h2>Lessons, assignments and resources — one consistent list.</h2>
+          <p>Tick a lesson and the progress updates instantly. It's stored in
+             localStorage, so your place survives a refresh.</p>
+        </div>
+
+        <div class="syllabus-layout">
+          <div class="modules" id="modules">
+            <!-- rendered by js/script.js from the SYLLABUS array -->
+          </div>
+          <aside class="progress-card">
+            <h3>Your progress</h3>
+            <p class="p-nums" id="pNums">0 of 9 lessons complete</p>
+            <div class="p-track"><div class="p-fill" id="pFill"></div></div>
+            <span class="p-pct" id="pPct">0%</span>
+            <p class="p-hint">Every lesson row is the same component — a type icon,
+               a title, a duration and a checkbox. Consistency is the interface.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ STATS ═══════════ -->
+    <section class="stat-strip">
+      <div class="container stat-grid">
+        <div class="stat-item"><b>08</b><span>courses in the catalogue</span></div>
+        <div class="stat-item"><b>272</b><span>lessons &amp; assignments</span></div>
+        <div class="stat-item"><b>04</b><span>connected pages</span></div>
+        <div class="stat-item"><b>&#8377;359</b><span>starting price</span></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FEATURES ═══════════ -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Why Learnly</span>
+          <h2>Consistency you can feel, readability you can measure.</h2>
+        </div>
+        <div class="features-grid">
+          <article class="feature">
+            <div class="feature-icon">&#9635;</div>
+            <h3>One component system</h3>
+            <p>Course cards, lesson rows and chips are each defined once and reused everywhere.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">65ch</div>
+            <h3>Readable by the numbers</h3>
+            <p>A 65-character measure, a baseline grid, and a serif tuned for long reading.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">%</div>
+            <h3>Progress that persists</h3>
+            <p>Lesson completion and reading preferences survive refresh via localStorage.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">0kb</div>
+            <h3>Zero dependencies</h3>
+            <p>No frameworks, no libraries — just HTML, CSS variables and vanilla JS.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CTA ═══════════ -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Found a course worth taking?</h2>
+          <p>Enroll in under a minute — cart, GST totals and a fully validated checkout.</p>
+          <a href="products.html" class="btn btn-primary">See all 8 courses</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand"><span class="brand-mark">&#9654;</span>Learnly</a>
+          <p class="footer-blurb">An Online Learning Portal UI — courses, lessons, assignments and
+             resources presented through one consistent, readable CSS interface.</p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Courses</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="payment.html">Payment</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Project</h4>
+          <ul>
+            <li><a href="#reader">The reader</a></li>
+            <li><a href="#syllabus">Syllabus &amp; progress</a></li>
+            <li><a href="#">AAT-1 · Full Stack Web Development</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Learnly</span>
+        <span>Built with HTML + CSS + JS</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
